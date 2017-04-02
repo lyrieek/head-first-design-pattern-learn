@@ -27,6 +27,8 @@ public class WeatherData implements Subject {
 
     @Override
     public void removeObserver(Observer o) {
+        if (o == null) return;
+        o.update(0, 0, 0);
         list.remove(o);
     }
 
@@ -40,11 +42,12 @@ public class WeatherData implements Subject {
 
     /**
      * 为主题提供数据来源，用于notify观察者list
+     *
      * @param temp
      * @param humidity
      * @param pressure
      */
-    public void setMeasurements(float temp, float humidity, float pressure){
+    public void setMeasurements(float temp, float humidity, float pressure) {
         this.temp = temp;
         this.humidity = humidity;
         this.pressure = pressure;

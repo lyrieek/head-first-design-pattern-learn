@@ -33,7 +33,7 @@ public class CurrentConditionDisplay implements Observer, DisplayElement {
 
     @Override
     public void display() {
-        StringBuilder sb = new StringBuilder("this object");
+        StringBuilder sb = new StringBuilder(this.toString());
         sb.append(this.weatherData != null ?" is ":" is not ");
         sb.append("register from WeatherData is \ntemp:" + this.temp +
                 "\nhumidity:" + this.humidity + "\npressure:" + this.pressure);
