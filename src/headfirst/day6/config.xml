@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config>
+    <NYPizza>
+        <NYPizzaStory>headfirst.day6.factory.NYPizzaStory</NYPizzaStory>
+        <NYPizzaFactory>headfirst.day6.abstracts.factory.NYPizzaFactory</NYPizzaFactory>
+    </NYPizza>
+
+    <ChicagoPizza>
+        <ChicagoPizzaStory>headfirst.day6.factory.ChicagoPizzaStory</ChicagoPizzaStory>
+        <ChicagoPizzaFactory>headfirst.day6.abstracts.factory.ChicagoPizzaFactory</ChicagoPizzaFactory>
+    </ChicagoPizza>
+</config>

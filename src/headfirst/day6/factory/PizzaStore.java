@@ -1,7 +1,6 @@
 package headfirst.day6.factory;
 
-import headfirst.day6.abstracts.factory.ChicagoPizzaFactory;
-import headfirst.day6.abstracts.factory.NYPizzaFactory;
+import headfirst.day6.XMLUtil;
 import headfirst.day6.pizza.Pizza;
 
 /**
@@ -10,11 +9,13 @@ import headfirst.day6.pizza.Pizza;
 public abstract class PizzaStore {
 
     public static void main(String[] args) {
+/*        PizzaStore nyPizzaStore = new NYPizzaStory(new NYPizzaFactory());
+        PizzaStore chicagoPizzaStore = new ChicagoPizzaStory(new ChicagoPizzaFactory());*/
         /**
-         * 这里初始化的是工厂并传入对应的调料工厂
+         * 使用读取xml的形式实例化Store和Factory对象
          */
-        PizzaStore nyPizzaStore = new NYPizzaStory(new NYPizzaFactory());
-        PizzaStore chicagoPizzaStore = new ChicagoPizzaStory(new ChicagoPizzaFactory());
+        NYPizzaStory nyPizzaStore = (NYPizzaStory) XMLUtil.getBean("NYPizza");
+        ChicagoPizzaStory chicagoPizzaStore = (ChicagoPizzaStory) XMLUtil.getBean("ChicagoPizza");
 
         Pizza nyPizza = nyPizzaStore.orderPizza("pepperoni");
         System.out.println(nyPizza + " is finish");
